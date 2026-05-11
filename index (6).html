@@ -34,7 +34,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* subtle dot-grid */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -44,7 +43,6 @@ body::before {
   z-index: 0;
 }
 
-/* glow blobs */
 .blob {
   position: fixed;
   border-radius: 50%;
@@ -63,7 +61,6 @@ body::before {
   padding: 64px 28px 96px;
 }
 
-/* ── HEADER ── */
 header { margin-bottom: 52px; }
 
 .tag-row {
@@ -108,7 +105,6 @@ h1 .line2 {
   background-clip: text;
 }
 
-/* contact pills */
 .contacts {
   display: flex;
   flex-wrap: wrap;
@@ -136,7 +132,6 @@ h1 .line2 {
 .contact-pill svg { flex-shrink: 0; opacity: .7; }
 .contact-pill:hover svg { opacity: 1; }
 
-/* ── GRID ── */
 .grid {
   display: grid;
   grid-template-columns: 1fr 240px;
@@ -144,7 +139,6 @@ h1 .line2 {
   align-items: start;
 }
 
-/* ── SECTION ── */
 .sec { margin-bottom: 36px; }
 
 .sec-head {
@@ -167,7 +161,6 @@ h1 .line2 {
   background: linear-gradient(90deg, rgba(0,229,255,.25), transparent);
 }
 
-/* about */
 .about {
   font-size: 14px;
   line-height: 1.85;
@@ -175,7 +168,6 @@ h1 .line2 {
 }
 .about strong { color: #ddddf0; font-weight: 500; }
 
-/* edu */
 .edu-item {
   display: flex;
   justify-content: space-between;
@@ -203,7 +195,6 @@ h1 .line2 {
   align-self: center;
 }
 
-/* skills */
 .skill-block { margin-bottom: 16px; }
 .skill-cat {
   font-family: var(--mono);
@@ -226,7 +217,6 @@ h1 .line2 {
 }
 .tag:hover { border-color: var(--violet); color: #c4b5fd; }
 
-/* competencies */
 .comp-item {
   display: flex;
   gap: 12px;
@@ -240,7 +230,6 @@ h1 .line2 {
 .comp-item:last-child { border-bottom: none; }
 .comp-arrow { color: var(--cyan); flex-shrink: 0; font-family: var(--mono); font-size: 12px; margin-top: 2px; }
 
-/* ── ASIDE CARDS ── */
 .aside-card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -249,7 +238,6 @@ h1 .line2 {
   margin-bottom: 16px;
 }
 
-/* certs */
 .cert-item {
   padding: 9px 0;
   border-bottom: 1px solid var(--border);
@@ -267,7 +255,6 @@ h1 .line2 {
   color: var(--green);
 }
 
-/* langs */
 .lang-item { margin-bottom: 14px; }
 .lang-head { display: flex; justify-content: space-between; margin-bottom: 6px; }
 .lang-name { font-size: 13px; font-weight: 500; }
@@ -284,7 +271,6 @@ h1 .line2 {
   background: linear-gradient(90deg, var(--cyan), var(--violet));
 }
 
-/* footer */
 footer {
   margin-top: 64px;
   padding-top: 22px;
@@ -310,7 +296,6 @@ footer {
 
 <div class="page">
 
-  <!-- HEADER -->
   <header>
     <div class="tag-row">
       <div class="tag-dot"></div>
@@ -342,11 +327,9 @@ footer {
     </div>
   </header>
 
-  <!-- BODY -->
   <div class="grid">
     <main>
 
-      <!-- ABOUT -->
       <div class="sec">
         <div class="sec-head"><div class="sec-label">Hakkında</div><div class="sec-line"></div></div>
         <p class="about">
@@ -354,7 +337,6 @@ footer {
         </p>
       </div>
 
-      <!-- EDUCATION -->
       <div class="sec">
         <div class="sec-head"><div class="sec-label">Eğitim</div><div class="sec-line"></div></div>
         <div class="edu-item">
@@ -367,7 +349,6 @@ footer {
         </div>
       </div>
 
-      <!-- SKILLS -->
       <div class="sec">
         <div class="sec-head"><div class="sec-label">Teknik Yetenekler</div><div class="sec-line"></div></div>
         <div class="skill-block">
@@ -392,7 +373,6 @@ footer {
         </div>
       </div>
 
-      <!-- COMPETENCIES -->
       <div class="sec">
         <div class="sec-head"><div class="sec-label">Yetkinlikler</div><div class="sec-line"></div></div>
         <div class="comp-item"><span class="comp-arrow">→</span>Proje ve zaman yönetimi; öğrenci kulübü etkinliklerinde planlama, takvim takibi ve görev koordinasyonu</div>
@@ -403,10 +383,8 @@ footer {
 
     </main>
 
-    <!-- ASIDE -->
     <aside>
 
-      <!-- CERTS -->
       <div class="aside-card">
         <div class="sec-head" style="margin-bottom:14px"><div class="sec-label">Sertifikalar</div><div class="sec-line"></div></div>
         <div class="cert-item"><div class="cert-name">CAPT – Certified Associate Penetration Tester</div><div class="cert-foot"><span class="cert-issuer">Hackviser</span><span class="cert-year">2025</span></div></div>
@@ -419,7 +397,6 @@ footer {
         <div class="cert-item"><div class="cert-name">Oyun ve Uygulama Akademisi Mezuniyet</div><div class="cert-foot"><span class="cert-issuer">Google</span><span class="cert-year">2022</span></div></div>
       </div>
 
-      <!-- LANGUAGES -->
       <div class="aside-card">
         <div class="sec-head" style="margin-bottom:14px"><div class="sec-label">Diller</div><div class="sec-line"></div></div>
         <div class="lang-item">
