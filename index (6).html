@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Beyza Nur Eker – CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:      #09090e;
+  --panel:   #0f0f17;
+  --card:    #13131e;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --cyan:    #00e5ff;
+  --violet:  #7c3aed;
+  --green:   #10b981;
+  --text:    #e8e8f2;
+  --muted:   #7070888;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Space Grotesk', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* subtle dot-grid */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* glow blobs */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+.blob-1 { width: 500px; height: 500px; top: -180px; left: -160px; background: rgba(0,229,255,0.055); }
+.blob-2 { width: 420px; height: 420px; bottom: -140px; right: -120px; background: rgba(124,58,237,0.065); }
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 28px 96px;
+}
+
+/* ── HEADER ── */
+header { margin-bottom: 52px; }
+
+.tag-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.tag-line {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .26em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+.tag-line::before { content: '[ '; opacity: .5; }
+.tag-line::after  { content: ' ]'; opacity: .5; }
+.tag-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .4; transform: scale(.7); }
+}
+
+h1 {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6.5vw, 4.4rem);
+  line-height: .95;
+  letter-spacing: -.025em;
+  margin-bottom: 28px;
+}
+h1 .line2 {
+  display: block;
+  background: linear-gradient(110deg, #fff 10%, var(--cyan) 55%, var(--violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* contact pills */
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #9090a8;
+  text-decoration: none;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.contact-pill:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(0,229,255,0.05);
+}
+.contact-pill svg { flex-shrink: 0; opacity: .7; }
+.contact-pill:hover svg { opacity: 1; }
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ── SECTION ── */
+.sec { margin-bottom: 36px; }
+
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.sec-label {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  white-space: nowrap;
+}
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,229,255,.25), transparent);
+}
+
+/* about */
+.about {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #9090aa;
+}
+.about strong { color: #ddddf0; font-weight: 500; }
+
+/* edu */
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: border-color .2s;
+}
+.edu-item:hover { border-color: var(--border2); }
+.edu-name { font-size: 14px; font-weight: 500; }
+.edu-dept { font-size: 12px; color: #7070888; margin-top: 2px; color: #888898; }
+.edu-date {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  white-space: nowrap;
+  padding: 3px 10px;
+  border: 1px solid rgba(16,185,129,.2);
+  border-radius: 20px;
+  background: rgba(16,185,129,.06);
+  align-self: center;
+}
+
+/* skills */
+.skill-block { margin-bottom: 16px; }
+.skill-cat {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin-bottom: 8px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: #9090aa;
+  background: var(--card);
+  transition: border-color .15s, color .15s;
+}
+.tag:hover { border-color: var(--violet); color: #c4b5fd; }
+
+/* competencies */
+.comp-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+  color: #9090aa;
+  line-height: 1.6;
+}
+.comp-item:last-child { border-bottom: none; }
+.comp-arrow { color: var(--cyan); flex-shrink: 0; font-family: var(--mono); font-size: 12px; margin-top: 2px; }
+
+/* ── ASIDE CARDS ── */
+.aside-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* certs */
+.cert-item {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cert-item:last-child { border-bottom: none; }
+.cert-name { font-size: 12.5px; font-weight: 500; line-height: 1.4; }
+.cert-foot { display: flex; align-items: center; gap: 7px; margin-top: 3px; }
+.cert-issuer { font-size: 11px; color: #777788; }
+.cert-year {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 1px 7px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--green);
+}
+
+/* langs */
+.lang-item { margin-bottom: 14px; }
+.lang-head { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.lang-name { font-size: 13px; font-weight: 500; }
+.lang-level { font-size: 11px; color: #777788; font-family: var(--mono); }
+.lang-track {
+  height: 3px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.lang-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+}
+
+/* footer */
+footer {
+  margin-top: 64px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: #444458;
+  text-align: center;
+  letter-spacing: .1em;
+}
+
+@media(max-width:640px){
+  .page { padding: 40px 18px 64px; }
+  h1 { font-size: 2.2rem; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="tag-row">
+      <div class="tag-dot"></div>
+      <div class="tag-line">Bilgisayar Mühendisliği Öğrencisi &nbsp;·&nbsp; Yazılım &amp; Siber Güvenlik</div>
+    </div>
+    <h1>Beyza Nur <span class="line2">Eker</span></h1>
+
+    <div class="contacts">
+      <a class="contact-pill" href="tel:+905387739380">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +90 538 773 9380
+      </a>
+      <a class="contact-pill" href="mailto:byzanr398@gmail.com">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        byzanr398@gmail.com
+      </a>
+      <a class="contact-pill" href="https://www.linkedin.com/in/beyza-nur-eker-65669a258/" target="_blank" rel="noopener">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="contact-pill" href="https://github.com/Beyzanureker" target="_blank" rel="noopener">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        GitHub
+      </a>
+      <span class="contact-pill">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Karabük, Türkiye
+      </span>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="grid">
+    <main>
+
+      <!-- ABOUT -->
+      <div class="sec">
+        <div class="sec-head"><div class="sec-label">Hakkında</div><div class="sec-line"></div></div>
+        <p class="about">
+          Karabük Üniversitesi Bilgisayar Mühendisliği <strong>3. sınıf öğrencisiyim</strong>; yazılım geliştirme, siber güvenlik ve yeni teknolojiler alanlarında kendimi sürekli geliştirmeye odaklanıyorum. 2024'te <strong>Siber Vatan Programı</strong> kapsamında <strong>ZAYOTEM</strong> takımına kabul alarak zararlı yazılım ve tersine mühendislik alanlarında çalışmalar yürütmekteyim. Üniversitemizin Bilişim Teknolojileri ve Yazılım Kulübü'nde <strong>Başkan Yardımcısı</strong> olarak görev almaktayım.
+        </p>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="sec">
+        <div class="sec-head"><div class="sec-label">Eğitim</div><div class="sec-line"></div></div>
+        <div class="edu-item">
+          <div><div class="edu-name">Karabük Üniversitesi</div><div class="edu-dept">Bilgisayar Mühendisliği — Lisans</div></div>
+          <div class="edu-date">2022 – devam</div>
+        </div>
+        <div class="edu-item">
+          <div><div class="edu-name">Gediz Fen Lisesi</div><div class="edu-dept">Fen Lisesi</div></div>
+          <div class="edu-date">2016 – 2020</div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="sec">
+        <div class="sec-head"><div class="sec-label">Teknik Yetenekler</div><div class="sec-line"></div></div>
+        <div class="skill-block">
+          <div class="skill-cat">Programlama Dilleri</div>
+          <div class="tags"><span class="tag">Go</span><span class="tag">C</span><span class="tag">C#</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Java</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-cat">Web Teknolojileri</div>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Tasarım</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-cat">Veritabanı</div>
+          <div class="tags"><span class="tag">SQL</span><span class="tag">Oracle Database</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-cat">Siber Güvenlik</div>
+          <div class="tags"><span class="tag">Zararlı Yazılım Analizi</span><span class="tag">Web Uygulama Güvenliği</span></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-cat">Araçlar</div>
+          <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Linux</span><span class="tag">Burp Suite</span><span class="tag">Docker</span></div>
+        </div>
+      </div>
+
+      <!-- COMPETENCIES -->
+      <div class="sec">
+        <div class="sec-head"><div class="sec-label">Yetkinlikler</div><div class="sec-line"></div></div>
+        <div class="comp-item"><span class="comp-arrow">→</span>Proje ve zaman yönetimi; öğrenci kulübü etkinliklerinde planlama, takvim takibi ve görev koordinasyonu</div>
+        <div class="comp-item"><span class="comp-arrow">→</span>Başkan Yardımcılığı rolü ile takım çalışması, ekip içi iletişim ve liderlik deneyimi</div>
+        <div class="comp-item"><span class="comp-arrow">→</span>Teknik araştırma, dokümantasyon ve yeni teknolojilere hızlı adaptasyon</div>
+        <div class="comp-item"><span class="comp-arrow">→</span>Analitik düşünme, problem çözme ve uygulama odaklı çalışma yaklaşımı</div>
+      </div>
+
+    </main>
+
+    <!-- ASIDE -->
+    <aside>
+
+      <!-- CERTS -->
+      <div class="aside-card">
+        <div class="sec-head" style="margin-bottom:14px"><div class="sec-label">Sertifikalar</div><div class="sec-line"></div></div>
+        <div class="cert-item"><div class="cert-name">CAPT – Certified Associate Penetration Tester</div><div class="cert-foot"><span class="cert-issuer">Hackviser</span><span class="cert-year">2025</span></div></div>
+        <div class="cert-item"><div class="cert-name">Siber Vatan Bootcamp</div><div class="cert-foot"><span class="cert-issuer">Siber Vatan</span><span class="cert-year">2025</span></div></div>
+        <div class="cert-item"><div class="cert-name">Database Design</div><div class="cert-foot"><span class="cert-issuer">Oracle</span><span class="cert-year">2025</span></div></div>
+        <div class="cert-item"><div class="cert-name">Siber Vatan Katılım Sertifikası</div><div class="cert-foot"><span class="cert-issuer">Siber Vatan</span><span class="cert-year">2024</span></div></div>
+        <div class="cert-item"><div class="cert-name">Proje Yönetimi</div><div class="cert-foot"><span class="cert-issuer">Coursera</span><span class="cert-year">2023</span></div></div>
+        <div class="cert-item"><div class="cert-name">Versiyon Kontrol: Git & GitHub</div><div class="cert-foot"><span class="cert-issuer">BTK</span><span class="cert-year">2023</span></div></div>
+        <div class="cert-item"><div class="cert-name">C Programlama Dili</div><div class="cert-foot"><span class="cert-issuer">BTK</span><span class="cert-year">2023</span></div></div>
+        <div class="cert-item"><div class="cert-name">Oyun ve Uygulama Akademisi Mezuniyet</div><div class="cert-foot"><span class="cert-issuer">Google</span><span class="cert-year">2022</span></div></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="aside-card">
+        <div class="sec-head" style="margin-bottom:14px"><div class="sec-label">Diller</div><div class="sec-line"></div></div>
+        <div class="lang-item">
+          <div class="lang-head"><span class="lang-name">Türkçe</span><span class="lang-level">Ana dil</span></div>
+          <div class="lang-track"><div class="lang-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-item" style="margin-bottom:0">
+          <div class="lang-head"><span class="lang-name">İngilizce</span><span class="lang-level">Orta seviye</span></div>
+          <div class="lang-track"><div class="lang-fill" style="width:55%"></div></div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer>© 2025 &nbsp;·&nbsp; BEYZA NUR EKER &nbsp;·&nbsp; KARABÜK ÜNİVERSİTESİ BİLGİSAYAR MÜHENDİSLİĞİ</footer>
+
+</div>
+</body>
+</html>
